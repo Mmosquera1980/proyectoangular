@@ -1,0 +1,59 @@
+
+<form #addForm="ngForm">  
+  <table border="5"> 
+
+    <tr> 
+      <td>
+          <md-form-field>
+              <input mdInput placeholder="Codigo Ruta" required [(ngModel)]="viaje.codigo" name="Codigo Ruta" #codigo="ngModel" />
+                  <md-error>
+                       Debes llenar el campo
+                  </md-error>
+          </md-form-field>
+      </td>
+    </tr> 
+
+    <tr> 
+        <td>
+            <md-form-field>
+                <input mdInput placeholder="Nombre Ruta" required [(ngModel)]="viaje.nombre" name="Nombre" #nombre="ngModel" />
+                    <md-error>
+                         Debes llenar el campo
+                    </md-error>
+            </md-form-field>
+        </td>
+    </tr> 
+
+    <tr>
+        <td>
+            <md-select placeholder="Lugar Inicio" [(ngModel)]="viaje.linicio" name="Lugar Inicio" #linicio="ngModel">
+                        <md-option *ngFor="let linicio of ciudadesList" [value]="linicio.label">
+                              {{linicio.label}}
+                        </md-option>
+            </md-select>
+        </td>                     
+    </tr>    
+
+    <tr>
+        <td>
+
+            <md-select placeholder="Lugar Final" [(ngModel)]="viaje.lfin" name="Lugar Fin" #lfin="ngModel">
+                        <md-option *ngFor="let lfin of ciudadesList" [value]="lfin.label">
+                              {{lfin.label}}
+                        </md-option>
+            </md-select>        
+        </td>                     
+    </tr>
+    
+
+    <tr>    
+        <td>
+            <div class="button-row">
+                    <button class="btn btn-info my-4 my-sm-3" (click)= "onNewClick()">Nuevo</button>
+                    <button class="btn btn-info my-4 my-sm-3" (click)= "onSaveClick()">Guardar</button>
+            </div>
+        </td>                     
+    </tr>
+
+  </table>
+</form>

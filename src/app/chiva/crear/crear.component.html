@@ -1,0 +1,68 @@
+<form #addForm="ngForm">  
+  <table border="5">
+    <tr>
+      <td>
+            <md-form-field >
+                <input required mdInput placeholder="Nombre" [(ngModel)]="chiva.nombre" name="Nombre" #Nombre="ngModel">
+                    <md-error>
+                        Debes llenar el campo
+                    </md-error>
+            </md-form-field>
+      </td>
+    </tr>    
+
+    <tr> 
+        <td>
+            <md-form-field>
+                <input mdInput placeholder="Placa" required [(ngModel)]="chiva.placa" name="Placa" #Placa="ngModel" />
+                    <md-error>
+                         Debes llenar el campo
+                    </md-error>
+            </md-form-field>
+        </td>
+    </tr> 
+
+    <tr>
+        <td>
+            <md-form-field >
+                <input required mdInput placeholder="Numero Puestos" [(ngModel)]="chiva.numpuestos" name="Numpuestos" #numpuestos="ngModel" >
+                    <md-error>
+                            Debes llenar el campo
+                    </md-error>
+            </md-form-field>    
+        </td>                     
+    </tr>    
+
+    <tr>
+            <td>
+                <div>Gasolina - Gas - ACPM</div>
+                <md-radio-group required class="chiva-radio-group" [(ngModel)]="chiva.combustible" name="Combustible" #combustible="ngModel">
+                  <md-radio-button required class="chiva-radio-button" *ngFor="let combustible of combustibleList" [value]="combustible.label">
+                    {{combustibleList.label}}
+                  </md-radio-button>
+                </md-radio-group>
+            </td>                     
+        </tr>
+    
+    <tr>
+        <td>
+            <md-select placeholder="Modelo" [(ngModel)]="chiva.modelo" name="modelo" #modelo="ngModel">
+                    <md-option *ngFor="let modelo of modeloList" [value]="modelo.label">
+                          {{modelo.label}}
+                    </md-option>
+            </md-select>
+        </td>                     
+    </tr>
+
+    <tr>    
+        <td>
+            <div class="button-row">
+                <button class="btn btn-info my-4 my-sm-3" (click)= "onNewClick()">Nuevo</button>
+                <button class="btn btn-info my-4 my-sm-3" (click)= "onSaveClick()">Guardar</button>
+     
+            </div>
+        </td>                     
+    </tr>
+
+  </table>
+</form>

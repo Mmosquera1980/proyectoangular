@@ -1,0 +1,58 @@
+<form #addForm="ngForm">  
+    <table border="5">
+      <tr>
+        <td>
+              <md-form-field >
+                  <input required mdInput placeholder="Cedula" [(ngModel)]="pasajero.cedula" name="Cedula" #cedula="ngModel">
+                      <md-error>
+                          Debes llenar el campo
+                      </md-error>
+              </md-form-field>
+        </td>
+      </tr>    
+  
+      <tr> 
+          <td>
+              <md-form-field>
+                  <input mdInput placeholder="Nombre" required [(ngModel)]="pasajero.nombre" name="Nombre" #nombre="ngModel" />
+                      <md-error>
+                           Debes llenar el campo
+                      </md-error>
+              </md-form-field>
+          </td>
+      </tr> 
+  
+      <tr>
+          <td>
+              <md-form-field >
+                  <input required mdInput placeholder="Telefono" [(ngModel)]="pasajero.telefono" name="Telefono" #telefono="ngModel" >
+                      <md-error>
+                              Debes llenar el campo
+                      </md-error>
+              </md-form-field>    
+          </td>                     
+      </tr>    
+  
+      <tr>
+              <td>
+                  <md-form-field >
+                      <input required mdInput placeholder="Edad" [(ngModel)]="pasajero.edad" name="Edad" #edad="ngModel" >
+                          <md-error>
+                                  Debes llenar el campo
+                          </md-error>
+                  </md-form-field>  
+              </td>                     
+      </tr>
+      
+  
+      <tr>    
+          <td>
+              <div class="button-row">
+                    <button class="btn btn-primary my-4 my-sm-3" (click)= "onNewClick()">Nuevo</button>
+                    <button class="btn btn-primary my-4 my-sm-3" (click)= "onSaveClick()">Guardar</button>    
+              </div>
+          </td>                     
+      </tr>
+  
+    </table>
+  </form>

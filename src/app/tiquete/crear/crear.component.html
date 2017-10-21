@@ -1,0 +1,53 @@
+
+<form #addForm="ngForm">  
+    <p></p>
+  <table border="5">
+    <tr>
+        <td>
+            <md-form-field >
+                <input required mdInput placeholder="Codigo" [(ngModel)]="tiquete.codigo" name="codigo" #codigo="ngModel">
+                    <md-error>
+                        Debes llenar el campo 
+                    </md-error>
+            </md-form-field>
+        </td>
+    </tr>        
+    <tr>
+        <td>
+            <md-select placeholder="Pasajero" [(ngModel)]="tiquete.pasajero" name="pasajero" #pasajero="ngModel">
+                    <md-option *ngFor="let pasajero of pasajerodata.pasajerosList" [value]="pasajero.nombre">
+                          {{pasajero.nombre}}
+                    </md-option>
+            </md-select>
+        </td>                     
+    </tr>
+    <tr>
+        <td>
+            <md-select placeholder="Chiva" [(ngModel)]="tiquete.chiva" name="Chiva" #chiva="ngModel">
+                    <md-option *ngFor="let chiva of chivadata.chivasList" [value]="chiva.nombre">
+                          {{chiva.nombre}}
+                    </md-option>
+            </md-select>
+        </td>                     
+    </tr>
+    <tr>
+        <td>
+            <md-select placeholder="Viaje" [(ngModel)]="tiquete.viaje" name="Viaje" #viaje="ngModel">
+                    <md-option *ngFor="let viaje of viajedata.viajesList" [value]="viaje.nombre">
+                          {{viaje.nombre}}
+                    </md-option>
+            </md-select>
+        </td>                     
+    </tr>
+    <tr>    
+        <td>
+            <div class="button-row">
+                    <button class="btn btn-primary my-4 my-sm-3" (click)= "onNewClick()">Nuevo</button>
+                    <button class="btn btn-primary my-4 my-sm-3" (click)= "onSaveClick()">Guardar</button> 
+                               
+            </div>
+        </td>                     
+    </tr>
+
+  </table>
+</form>

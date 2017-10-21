@@ -1,0 +1,17 @@
+<p></p>
+<table border="1">
+    <tr>
+      <td>Codigo</td>
+      <td>Pasajero</td>
+      <td>Chiva</td>
+      <td>Viaje</td>
+    </tr>
+    <tr *ngFor="let tiquete of tiqueteService.tiquetesList">
+        <td>{{tiquete.codigo}}</td>
+        <td>{{tiquete.pasajero}}</td>
+        <td>{{tiquete.chiva}}</td>
+        <td>{{tiquete.viaje}}</td>
+      </tr>
+    </table>
+    <p></p>
+    <p></p>

@@ -1,0 +1,25 @@
+
+.conten{
+    background-image: url(/assets/images/4.jpg);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: relative;
+}
+
+.conten:before{
+    content:"";
+    width: 100%;
+    height: 100%;
+    background-color: rgb(124, 142, 175);
+    background-attachment: fixed;
+    position: absolute;
+    opacity: 0.8;
+}
+
+video{
+
+    width:100%;
+    height:100%;
+}
+
